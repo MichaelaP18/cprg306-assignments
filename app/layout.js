@@ -3,7 +3,7 @@ import "./globals.css";
 
 
 export const metadata = {
-  title: "Web dev 2 demo",
+  title: "Shopping List",
   description: "Web dev 2 demos",
 };
 
