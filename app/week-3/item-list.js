@@ -1,88 +1,88 @@
-// item-list.js
-import React from 'react';
 import Item from './item';
 
-const item1 = {
+
+const Item1 = {
   name: "milk, 4 L 🥛",
   quantity: 1,
   category: "dairy",
 };
 
-const item2 = {
+const Item2 = {
   name: "bread 🍞",
   quantity: 2,
   category: "bakery",
 };
 
-const item3 = {
+const Item3 = {
   name: "eggs, dozen 🥚",
   quantity: 2,
   category: "dairy",
 };
 
-const item4 = {
+const Item4 = {
   name: "bananas 🍌",
   quantity: 6,
   category: "produce",
 };
 
-const item5 = {
+const Item5 = {
   name: "broccoli 🥦",
   quantity: 3,
   category: "produce",
 };
 
-const item6 = {
+const Item6 = {
   name: "chicken breasts, 1 kg 🍗",
   quantity: 1,
   category: "meat",
 };
 
-const item7 = {
+const Item7 = {
   name: "pasta sauce 🍝",
   quantity: 3,
   category: "canned goods",
 };
 
-const item8 = {
+const Item8 = {
   name: "spaghetti, 454 g 🍝",
   quantity: 2,
   category: "dry goods",
 };
 
-const item9 = {
+const Item9 = {
   name: "toilet paper, 12 pack 🧻",
   quantity: 1,
   category: "household",
 };
 
-const item10 = {
+const Item10 = {
   name: "paper towels, 6 pack",
   quantity: 1,
   category: "household",
 };
 
-const item11 = {
+const Item11 = {
   name: "dish soap 🍽️",
   quantity: 1,
   category: "household",
 };
 
-const item12 = {
+const Item12 = {
   name: "hand soap 🧼",
   quantity: 4,
   category: "household",
 };
 
-const items = [item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12];
+
+const items = [Item1, Item2, Item3, Item4, Item5, Item6, Item7, Item8, Item9, Item10, Item11, Item12];
 
 const ItemList = () => {
   return (
-    <div>
+    <ul>
       {items.map((item, index) => (
-        <Item key={index} {...item} />
+        <item key={index} {...item} />
       ))}
-    </div>
+    </ul>
   );
 };
 
