@@ -7,9 +7,11 @@ export default function Page() {
       <p>Web Dev 2 Demos</p>
       <ul>
         <li>
-          <Link href="/week-2">Week 2</Link>
-          <Link href="/week-3">Week 3</Link>
-          <Link href="/week-4">Week 4</Link>
+          <ul>
+            <Link href="/week-2">Week 2</Link>
+            <Link href="/week-3">Week 3</Link>
+            <Link href="/week-4">Week 4</Link>
+          </ul>
         </li>
       </ul>
     </div>

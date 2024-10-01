@@ -80,7 +80,7 @@ const ItemList = () => {
   return (
     <ul>
       {items.map((item, index) => (
-        <item key={index} {...item} />
+        <Item key={index} {...item} />
       ))}
     </ul>
   );
