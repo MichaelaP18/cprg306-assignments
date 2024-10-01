@@ -2,17 +2,12 @@ import Link from "next/link";
 
 export default function Page() {
   return (
-    <div>
-      <h1>Web Dev 2 Demos</h1>
-      <p>Web Dev 2 Demos</p>
+    <div className="text-center">
+      <h1 className="text-2xl font-bold mb-4">Web Dev 2 Demos</h1>
       <ul>
-        <li>
-          <ul>
-            <Link href="/week-2">Week 2</Link>
-            <Link href="/week-3">Week 3</Link>
-            <Link href="/week-4">Week 4</Link>
-          </ul>
-        </li>
+        <li className="p-4"><Link href="/week-2">Week 2</Link></li>
+        <li className="p-4"><Link href="/week-3">Week 3</Link></li>
+        <li className="p-4"><Link href="/week-4">Week 4</Link></li>
       </ul>
     </div>
   );
