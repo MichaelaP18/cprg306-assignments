@@ -1,0 +1,20 @@
+[
+    { 
+        "id": 1, 
+        "name": "Ralph", 
+        "description": "pugly", 
+        "imageURL": "/images/dog1.jpg" 
+    },
+    { 
+        "id": 2, 
+        "name": "Spot", 
+        "description": "spots", 
+        "imageURL": "/images/dog2.jpg" 
+    },
+    { 
+        "id": 3, 
+        "name": "Heard", 
+        "description": "pugly", 
+        "imageURL": "/images/dog3.jpg" 
+    }
+]
