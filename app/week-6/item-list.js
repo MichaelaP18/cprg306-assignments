@@ -1,43 +1,40 @@
 import { useState, useEffect } from 'react';
 import Item from './item';
-import Items from './items';
+import items from './items';
 
 
 
-const ItemList = () => {
-    const [sortBy, setSortBy] = useState('name');
-    const [items, setItems] = useState([]);
+export default function ItemList() {
+    const [sortByName, setSortByName] = useState(true);
+    const [item, setItems] = useState([...items]);
+    const [sortByCategory, setSortByCategory] = useState(false);
 
-
-    useEffect(() => {
-        fetch('./items.json')
-        .then(response => response.json())
-        .then(data => setItems(data))
-        .catch(error => console.error("Error fetching data: ", error));
-    }, []);
     
     const handleClick = (sortOption) => {
             setSortBy(sortOption);
 
     }
 
-    const sortedItems = [...items].sort((a, b) => {
-        if (sortBy === 'name') {
-          return a.name.localeCompare(b.name);
-        } else if (sortBy === 'category') {
-          return a.category.localeCompare(b.category);
+
+    const sortedItemsName = [...item].sort((a, b) => {
+        if (!sortByName) {
+            setSortByName(true);
+            setSortByCategory(false);
+            const sortedItems = [...item].sort((a, b) => {
+                a.name.localeCompare(b.name);
+            }
         }
-        return 0;
+        setItems(sortedItems);
       });
 
   return (
     <div>
         <label>Sort By: </label>
         <button onClick={() => handleClick('name')} style={buttonStyles(sortBy ===  'name' )} className="bg-green-400 hover:bg-green-600 rounded w-30 p-2 m-2">Name</button>
-        <button className="bg-green-400 hover:bg-green-600 rounded w-30 p-2 m-2" style={buttonStyles(sortBy === 'category')} onClick={() => handleClick('category')}>Category</button>
+        <button style={buttonStyles(sortBy === 'category')} onClick={() => handleClick('category')}>Category</button>
         <ul>
-        {sortedItems.map((item, index) => (
-            <li key={index}>{item.name} - {items.category}</li>
+        {items.map((items, index) => (
+            <li key={index}>{items.name}</li>
         ))}
         </ul>
         <p>Current sorting preference: {sortBy}</p>
@@ -53,5 +50,3 @@ const buttonStyles = (isActive) => ({
     border: 'none',
     cursor: 'pointer',
 });  
-
-export default ItemList;
