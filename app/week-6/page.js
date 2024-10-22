@@ -1,3 +1,5 @@
+"use client";
+
 import ItemList from './item-list';
 import Link from "next/link";
 

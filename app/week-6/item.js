@@ -6,8 +6,9 @@ const Item = ({ name, quantity, category }) => {
         <div>
           <h3>{name}</h3>
           <p >{category}</p>
+          <span >{quantity}</span>
         </div>
-        <span >{quantity}</span>
+        
       </li>
     );
   };
