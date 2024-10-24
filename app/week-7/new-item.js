@@ -48,20 +48,20 @@ const handleSubmit = (e) => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <div>
-                <label>
+            <div className="flex space-x-2">
+                <label className="m-2 my-auto">
                     Name: 
                     <input className="border border-black-800 m-2" id="name" type="text" value={name} onChange={(e) => setName(e.target.value)} required />
                 </label>
             </div>
-            <div>
-                <p className="m-2" type="number" value={quantity} onChange={(e) => setQuantity(Number(e.target.value))} min="1">Quantity: {quantity}</p> 
-                <button type="button" className="bg-green-400 hover:bg-green-600 text-write w-30 rounded p-1 m-2" onClick={Increment}>Increment Quantity</button>
+            <div className="flex space-x-2">
+                <p className="m-2 my-auto" type="number" value={quantity} onChange={(e) => setQuantity(Number(e.target.value))} min="1">Quantity: {quantity}</p> 
+                <button type="button" className="px-2 bg-green-400 hover:bg-green-600 text-write w-30 rounded p-1 m-2" onClick={Increment}>Increment Quantity</button>
 
-                <button type="button" className="bg-green-400 hover:bg-green-600 text-write w-30 rounded p-1 m-2" onClick={Decrement}>Decrement Quantity</button>
+                <button type="button" className="px-2 bg-green-400 hover:bg-green-600 text-write w-30 rounded p-1 m-2" onClick={Decrement}>Decrement Quantity</button>
             </div>
-            <div>
-                <label>
+            <div className="flex space-x-2">
+                <label className="m-2 my-auto">
                     Category: 
                 </label>
                     <select className="border border-black-800 m-2" id="category" value={category} onChange={(e) => setCategory(e.target.value)}>
@@ -78,7 +78,9 @@ const handleSubmit = (e) => {
                         <option value="Other">Other</option>
                     </select>
             </div>
-            <button className="bg-purple-400 hover:bg-purple-600 text-write w-30 rounded p-1 m-2" type="Submit">Submit</button>
+            <div className='flex justify-center'>
+            <button className="bg-purple-400 hover:bg-purple-600 text-write w-30 rounded p-2 m-4" type="Submit">Submit</button>
+            </div>
         </form>
     );
 }
