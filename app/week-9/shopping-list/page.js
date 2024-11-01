@@ -6,10 +6,12 @@ import NewItem from './new-item';
 import itemsData from './items';
 import Link from "next/link";
 import MealIdeas from "./meal-ideas";
+import { useUserAuth } from "../_utils/auth-context";
 
 const Page = () => {
   const [items, setItems] = useState(itemsData);
   const [selectedItemName, setSelectedItemName] = useState('');
+  const { user } = useUserAuth();
 
   const handleAddItem = (newItem) => {
     setItems([...items, newItem]);
@@ -26,12 +28,19 @@ const Page = () => {
     cleanedName = removeEmojis(cleanedName);
     setSelectedItemName(cleanedName);
   };
-
+if (!user) {
+  return (
+    <main>
+      <h1>Shopping List</h1>
+      <p>You must be logged in to see this page.</p>
+    </main>
+  );
+}
   return (
     <main>
       <ul>
         <li className="p-4 text-left hover:text-blue-600">
-          <Link href="http://localhost:3000/">Home</Link>
+          <Link href="http://localhost:3000/week-9">Week 9 Home</Link>
         </li>
       </ul>
       <div className="flex flex-col items-center p-4">
